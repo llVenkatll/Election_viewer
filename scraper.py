@@ -1,5 +1,4 @@
 import json
-import random
 import sys
 import time
 from datetime import datetime, timezone
@@ -12,7 +11,7 @@ ECI_JSON_URL = "https://results.eci.gov.in/ResultAcGenMay2026/election-json-S22-
 OUTPUT_PATH = Path("data.json")
 STATE_CODE = "S22"
 
-HEADERS = {
+headers = {
     "Accept": "application/json, text/plain, */*",
     "Accept-Encoding": "gzip, deflate",
     "Accept-Language": "en-US,en;q=0.9,ta;q=0.8",
@@ -40,31 +39,19 @@ def log(message):
     print(f"[{datetime.now(timezone.utc).isoformat(timespec='seconds')}] {message}", flush=True)
 
 
-def load_previous_data():
-    if not OUTPUT_PATH.exists():
-        return None
-
-    try:
-        with OUTPUT_PATH.open("r", encoding="utf-8") as f:
-            return json.load(f)
-    except (OSError, json.JSONDecodeError) as exc:
-        log(f"Could not read existing {OUTPUT_PATH}: {exc}")
-        return None
-
-
 def fetch_eci_json(max_attempts=5):
     last_error = None
+    response = None
 
     with requests.Session() as session:
-        session.headers.update(HEADERS)
-
         for attempt in range(1, max_attempts + 1):
             try:
                 log(f"Fetching ECI JSON, attempt {attempt}/{max_attempts}")
-                response = session.get(ECI_JSON_URL, timeout=25)
-                log(f"ECI response status: {response.status_code}")
+                response = session.get(ECI_JSON_URL, headers=headers, timeout=20)
+                print(f"Status code: {response.status_code}", flush=True)
 
                 if response.status_code == 200:
+                    print("Success: fetched ECI JSON", flush=True)
                     return response.json()
 
                 preview = response.text[:240].replace("\n", " ")
@@ -76,7 +63,7 @@ def fetch_eci_json(max_attempts=5):
                     break
             except (requests.Timeout, requests.ConnectionError) as exc:
                 last_error = exc
-                log(f"Network retryable error: {exc}")
+                log(f"Retryable request error: {exc}")
             except requests.RequestException as exc:
                 last_error = exc
                 log(f"Request failed: {exc}")
@@ -87,9 +74,8 @@ def fetch_eci_json(max_attempts=5):
                 break
 
             if attempt < max_attempts:
-                delay = min(45, (2 ** (attempt - 1)) + random.uniform(0.5, 2.5))
-                log(f"Waiting {delay:.1f}s before retry")
-                time.sleep(delay)
+                log("Waiting 2s before retry")
+                time.sleep(2)
 
     raise RuntimeError(f"Failed to fetch ECI JSON after retries: {last_error}")
 
@@ -113,8 +99,10 @@ def extract_tamil_nadu(raw_data):
     trimmed_state["chartData"] = filtered_rows
 
     if len(filtered_rows) != len(chart_data):
+        print(f"Number of rows parsed: {len(filtered_rows)}", flush=True)
         log(f"Filtered chartData from {len(chart_data)} rows to {len(filtered_rows)} {STATE_CODE} rows")
     else:
+        print(f"Number of rows parsed: {len(filtered_rows)}", flush=True)
         log(f"Found {len(filtered_rows)} {STATE_CODE} chartData rows")
 
     return {STATE_CODE: trimmed_state}
@@ -124,7 +112,7 @@ def build_payload(raw_data):
     return {
         "source": ECI_JSON_URL,
         "state_code": STATE_CODE,
-        "updated_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "updated_utc": datetime.now(timezone.utc).isoformat(),
         "data": extract_tamil_nadu(raw_data),
     }
 
@@ -138,31 +126,14 @@ def save_payload(payload):
     log(f"Saved {OUTPUT_PATH} with {len(payload['data'][STATE_CODE].get('chartData', []))} rows")
 
 
-def write_empty_fallback(error):
-    payload = {
-        "source": ECI_JSON_URL,
-        "state_code": STATE_CODE,
-        "updated_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "fetch_error": str(error),
-        "data": {STATE_CODE: {"chartData": [], "tableData": []}},
-    }
-    save_payload(payload)
-
-
 def main():
     try:
         raw_data = fetch_eci_json()
         save_payload(build_payload(raw_data))
+        print("Success: data.json updated", flush=True)
     except Exception as exc:
         log(f"Fetch/update failed: {exc}")
-        previous = load_previous_data()
-
-        if previous is not None:
-            log(f"Keeping existing {OUTPUT_PATH}; exiting successfully for GitHub Actions")
-            return 0
-
-        log(f"No existing {OUTPUT_PATH}; writing empty fallback payload")
-        write_empty_fallback(exc)
+        print("FAILED FETCH – keeping old data", flush=True)
         return 0
 
     return 0
