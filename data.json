@@ -1,7 +1,7 @@
 {
   "source": "https://results.eci.gov.in/ResultAcGenMay2026/election-json-S22-live.json",
   "state_code": "S22",
-  "updated_utc": "2026-05-04T13:01:07.250120+00:00",
+  "updated_utc": "2026-05-04T15:16:57.120800+00:00",
   "data": {
     "S22": {
       "chartData": [
@@ -272,11 +272,11 @@
           "#e72bd9"
         ],
         [
-          "PMK",
+          "TVK",
           "S22",
           39,
-          "K.SARAVANAN",
-          "#5D672B"
+          "G.KAPIL",
+          "#e72bd9"
         ],
         [
           "TVK",
@@ -503,11 +503,11 @@
           "#A08547"
         ],
         [
-          "ADMK",
+          "VCK",
           "S22",
           72,
-          "ARJUNAN. P",
-          "#A08547"
+          "VANNI ARASU",
+          "#729E31"
         ],
         [
           "DMK",
@@ -531,11 +531,11 @@
           "#5D672B"
         ],
         [
-          "TVK",
+          "ADMK",
           "S22",
           76,
-          "VIJAY R BARANIBALAAJI",
-          "#e72bd9"
+          "PALANISAMY S",
+          "#A08547"
         ],
         [
           "DMK",
@@ -580,11 +580,11 @@
           "#A08547"
         ],
         [
-          "TVK",
+          "ADMK",
           "S22",
           83,
-          "LAKSHMI JANARTHANAN. J",
-          "#e72bd9"
+          "USHARANI. P",
+          "#A08547"
         ],
         [
           "ADMK",
@@ -664,11 +664,11 @@
           "#e72bd9"
         ],
         [
-          "DMK",
+          "ADMK",
           "S22",
           95,
-          "MOORTHIY K S",
-          "#05F86E"
+          "SEKAR S",
+          "#A08547"
         ],
         [
           "TVK",
@@ -958,11 +958,11 @@
           "#e72bd9"
         ],
         [
-          "TVK",
+          "DMK",
           "S22",
           137,
-          "G.BALASUBRAMANI",
-          "#e72bd9"
+          "SURIYANUR. A. CHANDRAN",
+          "#05F86E"
         ],
         [
           "TVK",
@@ -1406,11 +1406,11 @@
           "#05F86E"
         ],
         [
-          "DMK",
+          "TVK",
           "S22",
           201,
-          "ERAMAKRISHNAN N",
-          "#05F86E"
+          "JEGANATHMISHRA PLA",
+          "#e72bd9"
         ],
         [
           "TVK",
@@ -1836,7 +1836,7 @@
           38
         ],
         [
-          "PMK",
+          "TVK",
           "S22",
           39
         ],
@@ -2001,7 +2001,7 @@
           71
         ],
         [
-          "ADMK",
+          "VCK",
           "S22",
           72
         ],
@@ -2021,7 +2021,7 @@
           75
         ],
         [
-          "TVK",
+          "ADMK",
           "S22",
           76
         ],
@@ -2056,7 +2056,7 @@
           82
         ],
         [
-          "TVK",
+          "ADMK",
           "S22",
           83
         ],
@@ -2116,7 +2116,7 @@
           94
         ],
         [
-          "DMK",
+          "ADMK",
           "S22",
           95
         ],
@@ -2326,7 +2326,7 @@
           136
         ],
         [
-          "TVK",
+          "DMK",
           "S22",
           137
         ],
@@ -2646,7 +2646,7 @@
           200
         ],
         [
-          "DMK",
+          "TVK",
           "S22",
           201
         ],
