@@ -1,7 +1,7 @@
 {
   "source": "https://results.eci.gov.in/ResultAcGenMay2026/election-json-S22-live.json",
   "state_code": "S22",
-  "updated_utc": "2026-05-04T09:09:24.533746+00:00",
+  "updated_utc": "2026-05-04T11:18:08.978510+00:00",
   "data": {
     "S22": {
       "chartData": [
@@ -272,25 +272,25 @@
           "#e72bd9"
         ],
         [
-          "TVK",
+          "PMK",
           "S22",
           39,
-          "G.KAPIL",
+          "K.SARAVANAN",
+          "#5D672B"
+        ],
+        [
+          "TVK",
+          "S22",
+          40,
+          "DR M SUDHAKAR",
           "#e72bd9"
         ],
         [
-          "ADMK",
-          "S22",
-          40,
-          "V. RAMU",
-          "#A08547"
-        ],
-        [
-          "DMK",
+          "TVK",
           "S22",
           41,
-          "R. GANDHI",
-          "#05F86E"
+          "THAHIRA",
+          "#e72bd9"
         ],
         [
           "ADMK",
@@ -300,11 +300,11 @@
           "#A08547"
         ],
         [
-          "DMK",
+          "TVK",
           "S22",
           43,
-          "P.KARTHIKEYAN",
-          "#05F86E"
+          "M.M.VINOTH KANNAN",
+          "#e72bd9"
         ],
         [
           "ADMK",
@@ -335,11 +335,11 @@
           "#006600"
         ],
         [
-          "TVK",
+          "DMK",
           "S22",
           48,
-          "IMTHIYAZ PANDARATTUDU ABDU",
-          "#e72bd9"
+          "VILWANATHAN. A.C.",
+          "#05F86E"
         ],
         [
           "ADMK",
@@ -377,11 +377,11 @@
           "#e72bd9"
         ],
         [
-          "ADMK",
+          "DMK",
           "S22",
           54,
-          "MUNUSAMY.K.P",
-          "#A08547"
+          "SRINIVASAN.P.S",
+          "#05F86E"
         ],
         [
           "ADMK",
@@ -391,11 +391,11 @@
           "#A08547"
         ],
         [
-          "CPI",
+          "BJP",
           "S22",
           56,
-          "RAMACHANDRAN. T",
-          "#e70d21"
+          "DR.NAGESH KUMAR. C",
+          "#ff944d"
         ],
         [
           "ADMK",
@@ -405,11 +405,11 @@
           "#A08547"
         ],
         [
-          "PMK",
+          "TVK",
           "S22",
           58,
-          "SELVAM. V.",
-          "#5D672B"
+          "GAJENDRAN. S.",
+          "#e72bd9"
         ],
         [
           "PMK",
@@ -440,11 +440,11 @@
           "#A08547"
         ],
         [
-          "TVK",
+          "DMK",
           "S22",
           63,
-          "ARUL ARUMUGAM",
-          "#e72bd9"
+          "VELU. E.V",
+          "#05F86E"
         ],
         [
           "ADMK",
@@ -503,11 +503,11 @@
           "#A08547"
         ],
         [
-          "ADMK",
+          "VCK",
           "S22",
           72,
-          "ARJUNAN. P",
-          "#A08547"
+          "VANNI ARASU",
+          "#729E31"
         ],
         [
           "DMK",
@@ -594,11 +594,11 @@
           "#A08547"
         ],
         [
-          "DMK",
+          "ADMK",
           "S22",
           85,
-          "MIDHUN CHAKRAVARTHY. M",
-          "#05F86E"
+          "VENKATACHALAM. G",
+          "#A08547"
         ],
         [
           "ADMK",
@@ -650,11 +650,11 @@
           "#e72bd9"
         ],
         [
-          "ADMK",
+          "TVK",
           "S22",
           93,
-          "C CHANDRASEKARAN",
-          "#A08547"
+          "P CHANDRASEKAR",
+          "#e72bd9"
         ],
         [
           "TVK",
@@ -748,11 +748,11 @@
           "#e72bd9"
         ],
         [
-          "ADMK",
+          "TVK",
           "S22",
           107,
-          "A.BANNARI",
-          "#A08547"
+          "V.P.TAMILSELVI",
+          "#e72bd9"
         ],
         [
           "BJP",
@@ -776,11 +776,11 @@
           "#05F86E"
         ],
         [
-          "DMK",
+          "TVK",
           "S22",
           111,
-          "SMT.KAVITHA KALYANASUNDARAM",
-          "#05F86E"
+          "SUNILANAND",
+          "#e72bd9"
         ],
         [
           "TVK",
@@ -874,11 +874,11 @@
           "#05F86E"
         ],
         [
-          "ADMK",
+          "DMK",
           "S22",
           125,
-          "RADHAKRISHNAN K.",
-          "#A08547"
+          "JAYAKUMAR M.",
+          "#05F86E"
         ],
         [
           "DMK",
@@ -909,11 +909,11 @@
           "#05F86E"
         ],
         [
-          "DMK",
+          "TVK",
           "S22",
           130,
-          "NAGAJOTHI.S",
-          "#05F86E"
+          "AYYANAR.R",
+          "#e72bd9"
         ],
         [
           "ADMK",
@@ -937,11 +937,11 @@
           "#05F86E"
         ],
         [
-          "ADMK",
+          "DMK",
           "S22",
           134,
-          "SELVAKUMAR. K",
-          "#A08547"
+          "ELANGO. R",
+          "#05F86E"
         ],
         [
           "ADMK",
@@ -1147,11 +1147,11 @@
           "#05F86E"
         ],
         [
-          "TVK",
+          "CPI(M)",
           "S22",
           164,
-          "SENTHIL PANDIAN. P",
-          "#e72bd9"
+          "LATHA. T",
+          "#FF1D15"
         ],
         [
           "ADMK",
@@ -1238,11 +1238,11 @@
           "#05F86E"
         ],
         [
-          "ADMK",
+          "DMK",
           "S22",
           177,
-          "GOVI.ELANGO",
-          "#A08547"
+          "ASHOKKUMAR. N",
+          "#05F86E"
         ],
         [
           "TVK",
@@ -1266,11 +1266,11 @@
           "#05F86E"
         ],
         [
-          "DMK",
+          "ADMK",
           "S22",
           181,
-          "REGUPATHY.S",
-          "#05F86E"
+          "VAIRAMUTHU.PK",
+          "#A08547"
         ],
         [
           "DMK",
@@ -1385,11 +1385,11 @@
           "#e72bd9"
         ],
         [
-          "ADMK",
+          "DMK",
           "S22",
           198,
-          "LOGIRAJAN.A",
-          "#A08547"
+          "MAHARAJAN.A",
+          "#05F86E"
         ],
         [
           "TVK",
@@ -1427,18 +1427,18 @@
           "#e70d21"
         ],
         [
-          "TVK",
+          "BJP",
           "S22",
           204,
-          "AJITH. M",
-          "#e72bd9"
+          "NAINAR NAGENTHRAN",
+          "#ff944d"
         ],
         [
-          "ADMK",
+          "TVK",
           "S22",
           205,
-          "RAJENTHRABHALAJI K T",
-          "#A08547"
+          "KEERTHANA S",
+          "#e72bd9"
         ],
         [
           "TVK",
@@ -1462,18 +1462,18 @@
           "#05F86E"
         ],
         [
-          "TVK",
+          "DMK",
           "S22",
           209,
-          "GOPIRAJAN. G",
-          "#e72bd9"
+          "ADVOCATE. KATHIRAVAN. K.K",
+          "#05F86E"
         ],
         [
-          "ADMK",
+          "TVK",
           "S22",
           210,
-          "M.KEERTHIKA",
-          "#A08547"
+          "RAJEEV",
+          "#e72bd9"
         ],
         [
           "DMK",
@@ -1511,11 +1511,11 @@
           "#05F86E"
         ],
         [
-          "ADMK",
+          "TVK",
           "S22",
           216,
-          "SHANMUGANATHAN. S. P",
-          "#A08547"
+          "SARAVANAN. G",
+          "#e72bd9"
         ],
         [
           "TVK",
@@ -1560,11 +1560,11 @@
           "#05F86E"
         ],
         [
-          "ADMK",
+          "DMK",
           "S22",
           223,
-          "K R P PRABAKARAN",
-          "#A08547"
+          "PAUL MANOJ PANDIAN",
+          "#05F86E"
         ],
         [
           "TVK",
@@ -1581,11 +1581,11 @@
           "#A08547"
         ],
         [
-          "TVK",
+          "DMK",
           "S22",
           226,
-          "MARIA JOHN",
-          "#e72bd9"
+          "M.ABDUL WAHAB",
+          "#05F86E"
         ],
         [
           "TVK",
@@ -1637,11 +1637,11 @@
           "#19AAED"
         ],
         [
-          "TVK",
+          "INC",
           "S22",
           234,
-          "SABIN. S",
-          "#e72bd9"
+          "RAJESH KUMAR. S",
+          "#19AAED"
         ]
       ],
       "tableData": [
@@ -1836,17 +1836,17 @@
           38
         ],
         [
-          "TVK",
+          "PMK",
           "S22",
           39
         ],
         [
-          "ADMK",
+          "TVK",
           "S22",
           40
         ],
         [
-          "DMK",
+          "TVK",
           "S22",
           41
         ],
@@ -1856,7 +1856,7 @@
           42
         ],
         [
-          "DMK",
+          "TVK",
           "S22",
           43
         ],
@@ -1881,7 +1881,7 @@
           47
         ],
         [
-          "TVK",
+          "DMK",
           "S22",
           48
         ],
@@ -1911,7 +1911,7 @@
           53
         ],
         [
-          "ADMK",
+          "DMK",
           "S22",
           54
         ],
@@ -1921,7 +1921,7 @@
           55
         ],
         [
-          "CPI",
+          "BJP",
           "S22",
           56
         ],
@@ -1931,7 +1931,7 @@
           57
         ],
         [
-          "PMK",
+          "TVK",
           "S22",
           58
         ],
@@ -1956,7 +1956,7 @@
           62
         ],
         [
-          "TVK",
+          "DMK",
           "S22",
           63
         ],
@@ -2001,7 +2001,7 @@
           71
         ],
         [
-          "ADMK",
+          "VCK",
           "S22",
           72
         ],
@@ -2066,7 +2066,7 @@
           84
         ],
         [
-          "DMK",
+          "ADMK",
           "S22",
           85
         ],
@@ -2106,7 +2106,7 @@
           92
         ],
         [
-          "ADMK",
+          "TVK",
           "S22",
           93
         ],
@@ -2176,7 +2176,7 @@
           106
         ],
         [
-          "ADMK",
+          "TVK",
           "S22",
           107
         ],
@@ -2196,7 +2196,7 @@
           110
         ],
         [
-          "DMK",
+          "TVK",
           "S22",
           111
         ],
@@ -2266,7 +2266,7 @@
           124
         ],
         [
-          "ADMK",
+          "DMK",
           "S22",
           125
         ],
@@ -2291,7 +2291,7 @@
           129
         ],
         [
-          "DMK",
+          "TVK",
           "S22",
           130
         ],
@@ -2311,7 +2311,7 @@
           133
         ],
         [
-          "ADMK",
+          "DMK",
           "S22",
           134
         ],
@@ -2461,7 +2461,7 @@
           163
         ],
         [
-          "TVK",
+          "CPI(M)",
           "S22",
           164
         ],
@@ -2526,7 +2526,7 @@
           176
         ],
         [
-          "ADMK",
+          "DMK",
           "S22",
           177
         ],
@@ -2546,7 +2546,7 @@
           180
         ],
         [
-          "DMK",
+          "ADMK",
           "S22",
           181
         ],
@@ -2631,7 +2631,7 @@
           197
         ],
         [
-          "ADMK",
+          "DMK",
           "S22",
           198
         ],
@@ -2661,12 +2661,12 @@
           203
         ],
         [
-          "TVK",
+          "BJP",
           "S22",
           204
         ],
         [
-          "ADMK",
+          "TVK",
           "S22",
           205
         ],
@@ -2686,12 +2686,12 @@
           208
         ],
         [
-          "TVK",
+          "DMK",
           "S22",
           209
         ],
         [
-          "ADMK",
+          "TVK",
           "S22",
           210
         ],
@@ -2721,7 +2721,7 @@
           215
         ],
         [
-          "ADMK",
+          "TVK",
           "S22",
           216
         ],
@@ -2756,7 +2756,7 @@
           222
         ],
         [
-          "ADMK",
+          "DMK",
           "S22",
           223
         ],
@@ -2771,7 +2771,7 @@
           225
         ],
         [
-          "TVK",
+          "DMK",
           "S22",
           226
         ],
@@ -2811,7 +2811,7 @@
           233
         ],
         [
-          "TVK",
+          "INC",
           "S22",
           234
         ]
