@@ -1,7 +1,7 @@
 {
   "source": "https://results.eci.gov.in/ResultAcGenMay2026/election-json-S22-live.json",
   "state_code": "S22",
-  "updated_utc": "2026-05-04T07:22:25.178852+00:00",
+  "updated_utc": "2026-05-04T09:09:24.533746+00:00",
   "data": {
     "S22": {
       "chartData": [
@@ -258,11 +258,11 @@
           "#e72bd9"
         ],
         [
-          "ADMK",
+          "TVK",
           "S22",
           37,
-          "V. SOMASUNDARAM",
-          "#A08547"
+          "R.V. RANJITHKUMAR",
+          "#e72bd9"
         ],
         [
           "TVK",
@@ -391,11 +391,11 @@
           "#A08547"
         ],
         [
-          "BJP",
+          "CPI",
           "S22",
           56,
-          "DR.NAGESH KUMAR. C",
-          "#ff944d"
+          "RAMACHANDRAN. T",
+          "#e70d21"
         ],
         [
           "ADMK",
@@ -531,11 +531,11 @@
           "#5D672B"
         ],
         [
-          "ADMK",
+          "TVK",
           "S22",
           76,
-          "PALANISAMY S",
-          "#A08547"
+          "VIJAY R BARANIBALAAJI",
+          "#e72bd9"
         ],
         [
           "ADMK",
@@ -545,11 +545,11 @@
           "#A08547"
         ],
         [
-          "TVK",
+          "DMK",
           "S22",
           78,
-          "ASHOK KUMAR G",
-          "#e72bd9"
+          "KARTHIKEYAN K",
+          "#05F86E"
         ],
         [
           "DMK",
@@ -594,11 +594,11 @@
           "#A08547"
         ],
         [
-          "ADMK",
+          "DMK",
           "S22",
           85,
-          "VENKATACHALAM. G",
-          "#A08547"
+          "MIDHUN CHAKRAVARTHY. M",
+          "#05F86E"
         ],
         [
           "ADMK",
@@ -608,11 +608,11 @@
           "#A08547"
         ],
         [
-          "TVK",
+          "ADMK",
           "S22",
           87,
-          "SENTHILKUMAR. K",
-          "#e72bd9"
+          "VETRIVEL. S",
+          "#A08547"
         ],
         [
           "TVK",
@@ -657,11 +657,11 @@
           "#A08547"
         ],
         [
-          "ADMK",
+          "TVK",
           "S22",
           94,
-          "SRIDEVI MOHAN P S",
-          "#A08547"
+          "DILIP C S",
+          "#e72bd9"
         ],
         [
           "DMK",
@@ -755,11 +755,11 @@
           "#A08547"
         ],
         [
-          "TVK",
+          "BJP",
           "S22",
           108,
-          "IBRAHIM.R",
-          "#e72bd9"
+          "BHOJARAJAN.M",
+          "#ff944d"
         ],
         [
           "DMK",
@@ -860,18 +860,18 @@
           "#e72bd9"
         ],
         [
-          "ADMK",
+          "DMK",
           "S22",
           123,
-          "POLLACHI V. JAYARAMAN",
-          "#A08547"
+          "K. NITHYANANDHAN",
+          "#05F86E"
         ],
         [
-          "ADMK",
+          "DMK",
           "S22",
           124,
-          "LEKSHMANA SINGH. D",
-          "#A08547"
+          "KUTTY (ALIAS) SUDHAKAR. A",
+          "#05F86E"
         ],
         [
           "ADMK",
@@ -888,11 +888,11 @@
           "#05F86E"
         ],
         [
-          "CPI(M)",
+          "ADMK",
           "S22",
           127,
-          "PANDI. N",
-          "#FF1D15"
+          "RAVIMANOHARAN. K",
+          "#A08547"
         ],
         [
           "DMK",
@@ -923,11 +923,11 @@
           "#A08547"
         ],
         [
-          "TVK",
+          "DMK",
           "S22",
           132,
-          "NAZEER RAJA. G",
-          "#e72bd9"
+          "SENTHILKUMAR. I.P",
+          "#05F86E"
         ],
         [
           "DMK",
@@ -937,11 +937,11 @@
           "#05F86E"
         ],
         [
-          "TVK",
+          "ADMK",
           "S22",
           134,
-          "KARTHIKEYAN. P",
-          "#e72bd9"
+          "SELVAKUMAR. K",
+          "#A08547"
         ],
         [
           "ADMK",
@@ -1077,25 +1077,25 @@
           "#A08547"
         ],
         [
-          "VCK",
-          "S22",
-          154,
-          "ABDUR RAHMAN. A.R",
-          "#729E31"
-        ],
-        [
-          "INC",
-          "S22",
-          155,
-          "A.S.CHANDARASEKARAN",
-          "#19AAED"
-        ],
-        [
           "ADMK",
           "S22",
-          156,
-          "A BHUVANENTHIRAN",
+          154,
+          "MOHAN. K",
           "#A08547"
+        ],
+        [
+          "TVK",
+          "S22",
+          155,
+          "B.RAJKUMAR",
+          "#e72bd9"
+        ],
+        [
+          "DMK",
+          "S22",
+          156,
+          "M.R.K.PANNEERSELVAM",
+          "#05F86E"
         ],
         [
           "ADMK",
@@ -1133,11 +1133,11 @@
           "#19AAED"
         ],
         [
-          "ADMK",
+          "DMK",
           "S22",
           162,
-          "PAVUNRAJ. S",
-          "#A08547"
+          "NIVEDHA M MURUGAN",
+          "#05F86E"
         ],
         [
           "DMK",
@@ -1203,11 +1203,11 @@
           "#05F86E"
         ],
         [
-          "ADMK",
+          "IUML",
           "S22",
           172,
-          "DORAI. SHANMUGA PRABU",
-          "#A08547"
+          "A.M. SHAHJAHAN",
+          "#006600"
         ],
         [
           "DMK",
@@ -1259,11 +1259,11 @@
           "#A08547"
         ],
         [
-          "TVK",
+          "DMK",
           "S22",
           180,
-          "K.M. SHARIFF",
-          "#e72bd9"
+          "V. MUTHURAJA",
+          "#05F86E"
         ],
         [
           "DMK",
@@ -1315,11 +1315,11 @@
           "#e72bd9"
         ],
         [
-          "ADMK",
+          "INC",
           "S22",
           188,
-          "P.PERIYAPULLAN (A) SELVAM",
-          "#A08547"
+          "P.VISWANATHAN",
+          "#19AAED"
         ],
         [
           "TVK",
@@ -1329,11 +1329,11 @@
           "#e72bd9"
         ],
         [
-          "DMK",
+          "TVK",
           "S22",
           190,
-          "VENKATESAN.A",
-          "#05F86E"
+          "KARUPPAIAH.M.V",
+          "#e72bd9"
         ],
         [
           "TVK",
@@ -1441,11 +1441,11 @@
           "#A08547"
         ],
         [
-          "DMDK",
+          "TVK",
           "S22",
           206,
-          "VIJAYAPRABHAKAR",
-          "#E6C018"
+          "SELVAM P",
+          "#e72bd9"
         ],
         [
           "TVK",
@@ -1469,11 +1469,11 @@
           "#e72bd9"
         ],
         [
-          "INC",
+          "ADMK",
           "S22",
           210,
-          "RM. KARUMANICKAM",
-          "#19AAED"
+          "M.KEERTHIKA",
+          "#A08547"
         ],
         [
           "DMK",
@@ -1504,11 +1504,11 @@
           "#e72bd9"
         ],
         [
-          "TVK",
+          "DMK",
           "S22",
           215,
-          "J. MURUGAN",
-          "#e72bd9"
+          "ANITHA R. RADHAKRISHNAN",
+          "#05F86E"
         ],
         [
           "ADMK",
@@ -1560,11 +1560,11 @@
           "#05F86E"
         ],
         [
-          "DMK",
+          "ADMK",
           "S22",
           223,
-          "PAUL MANOJ PANDIAN",
-          "#05F86E"
+          "K R P PRABAKARAN",
+          "#A08547"
         ],
         [
           "TVK",
@@ -1602,11 +1602,11 @@
           "#e72bd9"
         ],
         [
-          "DMK",
+          "ADMK",
           "S22",
           229,
-          "MAHESH.R",
-          "#05F86E"
+          "THALAVAI SUNDARAM. N",
+          "#A08547"
         ],
         [
           "DMK",
@@ -1826,7 +1826,7 @@
           36
         ],
         [
-          "ADMK",
+          "TVK",
           "S22",
           37
         ],
@@ -1921,7 +1921,7 @@
           55
         ],
         [
-          "BJP",
+          "CPI",
           "S22",
           56
         ],
@@ -2021,7 +2021,7 @@
           75
         ],
         [
-          "ADMK",
+          "TVK",
           "S22",
           76
         ],
@@ -2031,7 +2031,7 @@
           77
         ],
         [
-          "TVK",
+          "DMK",
           "S22",
           78
         ],
@@ -2066,7 +2066,7 @@
           84
         ],
         [
-          "ADMK",
+          "DMK",
           "S22",
           85
         ],
@@ -2076,7 +2076,7 @@
           86
         ],
         [
-          "TVK",
+          "ADMK",
           "S22",
           87
         ],
@@ -2111,7 +2111,7 @@
           93
         ],
         [
-          "ADMK",
+          "TVK",
           "S22",
           94
         ],
@@ -2181,7 +2181,7 @@
           107
         ],
         [
-          "TVK",
+          "BJP",
           "S22",
           108
         ],
@@ -2256,12 +2256,12 @@
           122
         ],
         [
-          "ADMK",
+          "DMK",
           "S22",
           123
         ],
         [
-          "ADMK",
+          "DMK",
           "S22",
           124
         ],
@@ -2276,7 +2276,7 @@
           126
         ],
         [
-          "CPI(M)",
+          "ADMK",
           "S22",
           127
         ],
@@ -2301,7 +2301,7 @@
           131
         ],
         [
-          "TVK",
+          "DMK",
           "S22",
           132
         ],
@@ -2311,7 +2311,7 @@
           133
         ],
         [
-          "TVK",
+          "ADMK",
           "S22",
           134
         ],
@@ -2411,17 +2411,17 @@
           153
         ],
         [
-          "VCK",
+          "ADMK",
           "S22",
           154
         ],
         [
-          "INC",
+          "TVK",
           "S22",
           155
         ],
         [
-          "ADMK",
+          "DMK",
           "S22",
           156
         ],
@@ -2451,7 +2451,7 @@
           161
         ],
         [
-          "ADMK",
+          "DMK",
           "S22",
           162
         ],
@@ -2501,7 +2501,7 @@
           171
         ],
         [
-          "ADMK",
+          "IUML",
           "S22",
           172
         ],
@@ -2541,7 +2541,7 @@
           179
         ],
         [
-          "TVK",
+          "DMK",
           "S22",
           180
         ],
@@ -2581,7 +2581,7 @@
           187
         ],
         [
-          "ADMK",
+          "INC",
           "S22",
           188
         ],
@@ -2591,7 +2591,7 @@
           189
         ],
         [
-          "DMK",
+          "TVK",
           "S22",
           190
         ],
@@ -2671,7 +2671,7 @@
           205
         ],
         [
-          "DMDK",
+          "TVK",
           "S22",
           206
         ],
@@ -2691,7 +2691,7 @@
           209
         ],
         [
-          "INC",
+          "ADMK",
           "S22",
           210
         ],
@@ -2716,7 +2716,7 @@
           214
         ],
         [
-          "TVK",
+          "DMK",
           "S22",
           215
         ],
@@ -2756,7 +2756,7 @@
           222
         ],
         [
-          "DMK",
+          "ADMK",
           "S22",
           223
         ],
@@ -2786,7 +2786,7 @@
           228
         ],
         [
-          "DMK",
+          "ADMK",
           "S22",
           229
         ],
