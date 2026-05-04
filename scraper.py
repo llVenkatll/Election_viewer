@@ -8,6 +8,7 @@ import requests
 
 
 ECI_JSON_URL = "https://results.eci.gov.in/ResultAcGenMay2026/election-json-S22-live.json"
+ECI_PAGE_URL = "https://results.eci.gov.in/ResultAcGenMay2026/partywiseresult-S22.htm"
 OUTPUT_PATH = Path("data.json")
 STATE_CODE = "S22"
 
@@ -18,7 +19,7 @@ headers = {
     "Cache-Control": "no-cache",
     "Connection": "keep-alive",
     "Pragma": "no-cache",
-    "Referer": "https://results.eci.gov.in/ResultAcGenMay2026/partywiseresult-S22.htm",
+    "Referer": ECI_PAGE_URL,
     "Sec-Fetch-Dest": "empty",
     "Sec-Fetch-Mode": "cors",
     "Sec-Fetch-Site": "same-origin",
@@ -39,19 +40,18 @@ def log(message):
     print(f"[{datetime.now(timezone.utc).isoformat(timespec='seconds')}] {message}", flush=True)
 
 
-def fetch_eci_json(max_attempts=5):
+def fetch_with_requests(max_attempts=5):
     last_error = None
-    response = None
 
     with requests.Session() as session:
         for attempt in range(1, max_attempts + 1):
             try:
-                log(f"Fetching ECI JSON, attempt {attempt}/{max_attempts}")
+                log(f"Fetching ECI JSON with requests, attempt {attempt}/{max_attempts}")
                 response = session.get(ECI_JSON_URL, headers=headers, timeout=20)
-                print(f"Status code: {response.status_code}", flush=True)
+                print(f"Requests status code: {response.status_code}", flush=True)
 
                 if response.status_code == 200:
-                    print("Success: fetched ECI JSON", flush=True)
+                    print("Success: fetched ECI JSON with requests", flush=True)
                     return response.json()
 
                 preview = response.text[:240].replace("\n", " ")
@@ -78,6 +78,91 @@ def fetch_eci_json(max_attempts=5):
                 time.sleep(2)
 
     raise RuntimeError(f"Failed to fetch ECI JSON after retries: {last_error}")
+
+
+def fetch_with_playwright():
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError as exc:
+        raise RuntimeError("Playwright is not installed") from exc
+
+    log("Fetching ECI JSON with Playwright Chromium fallback")
+
+    with sync_playwright() as playwright:
+        browser = playwright.chromium.launch(
+            headless=True,
+            args=["--no-sandbox", "--disable-dev-shm-usage"],
+        )
+
+        try:
+            context = browser.new_context(
+                user_agent=headers["User-Agent"],
+                extra_http_headers={
+                    "Accept-Language": headers["Accept-Language"],
+                    "Cache-Control": "no-cache",
+                    "Pragma": "no-cache",
+                },
+                viewport={"width": 1365, "height": 900},
+            )
+            page = context.new_page()
+
+            log(f"Opening ECI page: {ECI_PAGE_URL}")
+            page_response = page.goto(ECI_PAGE_URL, wait_until="domcontentloaded", timeout=45000)
+            if page_response is not None:
+                print(f"Playwright page status code: {page_response.status}", flush=True)
+            page.wait_for_timeout(3000)
+
+            log("Fetching ECI JSON through Playwright browser context")
+            response = context.request.get(
+                ECI_JSON_URL,
+                headers={
+                    "Accept": "application/json, text/plain, */*",
+                    "Referer": ECI_PAGE_URL,
+                },
+                timeout=45000,
+            )
+            print(f"Playwright status code: {response.status}", flush=True)
+
+            if response.status == 200:
+                print("Success: fetched ECI JSON with Playwright context request", flush=True)
+                return response.json()
+
+            context_preview = response.text()[:240].replace("\n", " ")
+            log(
+                "Playwright context request failed; trying same-origin page fetch "
+                f"(status {response.status})"
+            )
+
+            page_fetch = page.evaluate(
+                """
+                async (url) => {
+                  const response = await fetch(url, {
+                    cache: "no-store",
+                    credentials: "include",
+                    headers: { "Accept": "application/json, text/plain, */*" }
+                  });
+                  return {
+                    status: response.status,
+                    text: await response.text()
+                  };
+                }
+                """,
+                ECI_JSON_URL,
+            )
+            print(f"Playwright page fetch status code: {page_fetch['status']}", flush=True)
+
+            if page_fetch["status"] != 200:
+                page_preview = page_fetch["text"][:240].replace("\n", " ")
+                raise RuntimeError(
+                    f"Playwright context request returned status {response.status}; "
+                    f"body preview: {context_preview}. "
+                    f"Page fetch returned status {page_fetch['status']}; body preview: {page_preview}"
+                )
+
+            print("Success: fetched ECI JSON with Playwright page fetch", flush=True)
+            return json.loads(page_fetch["text"])
+        finally:
+            browser.close()
 
 
 def extract_tamil_nadu(raw_data):
@@ -128,11 +213,18 @@ def save_payload(payload):
 
 def main():
     try:
-        raw_data = fetch_eci_json()
+        try:
+            raw_data = fetch_with_requests()
+            print("Data source method: requests", flush=True)
+        except Exception as requests_exc:
+            log(f"Requests fetch failed; trying Playwright fallback: {requests_exc}")
+            raw_data = fetch_with_playwright()
+            print("Data source method: Playwright", flush=True)
+
         save_payload(build_payload(raw_data))
         print("Success: data.json updated", flush=True)
     except Exception as exc:
-        log(f"Fetch/update failed: {exc}")
+        log(f"Both fetch methods failed or update could not be saved: {exc}")
         print("FAILED FETCH – keeping old data", flush=True)
         return 0
 
