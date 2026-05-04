@@ -4,33 +4,30 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-import requests
+from curl_cffi import requests
 
 
 ECI_JSON_URL = "https://results.eci.gov.in/ResultAcGenMay2026/election-json-S22-live.json"
 ECI_PAGE_URL = "https://results.eci.gov.in/ResultAcGenMay2026/partywiseresult-S22.htm"
 OUTPUT_PATH = Path("data.json")
 STATE_CODE = "S22"
+USER_AGENT = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/147.0.0.0 Safari/537.36"
+)
 
 headers = {
-    "Accept": "application/json, text/plain, */*",
-    "Accept-Encoding": "gzip, deflate",
-    "Accept-Language": "en-US,en;q=0.9,ta;q=0.8",
-    "Cache-Control": "no-cache",
-    "Connection": "keep-alive",
-    "Pragma": "no-cache",
-    "Referer": ECI_PAGE_URL,
-    "Sec-Fetch-Dest": "empty",
-    "Sec-Fetch-Mode": "cors",
-    "Sec-Fetch-Site": "same-origin",
-    "User-Agent": (
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/124.0.0.0 Safari/537.36"
-    ),
-    "sec-ch-ua": '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+    "accept": "*/*",
+    "accept-language": "en-US,en;q=0.9",
+    "referer": ECI_PAGE_URL,
+    "sec-ch-ua": '"Chromium";v="147", "Not.A/Brand";v="8"',
     "sec-ch-ua-mobile": "?0",
     "sec-ch-ua-platform": '"macOS"',
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+    "user-agent": USER_AGENT,
 }
 
 RETRY_STATUS_CODES = {403, 408, 429, 500, 502, 503, 504}
@@ -40,18 +37,24 @@ def log(message):
     print(f"[{datetime.now(timezone.utc).isoformat(timespec='seconds')}] {message}", flush=True)
 
 
-def fetch_with_requests(max_attempts=5):
+def fetch_with_curl_cffi(max_attempts=5):
     last_error = None
 
     with requests.Session() as session:
         for attempt in range(1, max_attempts + 1):
             try:
-                log(f"Fetching ECI JSON with requests, attempt {attempt}/{max_attempts}")
-                response = session.get(ECI_JSON_URL, headers=headers, timeout=20)
-                print(f"Requests status code: {response.status_code}", flush=True)
+                log(f"Fetching ECI JSON with curl_cffi, attempt {attempt}/{max_attempts}")
+                response = session.get(
+                    ECI_JSON_URL,
+                    headers=headers,
+                    impersonate="chrome120",
+                    timeout=20,
+                )
+                print(f"curl_cffi status code: {response.status_code}", flush=True)
+                print(response.text[:200], flush=True)
 
                 if response.status_code == 200:
-                    print("Success: fetched ECI JSON with requests", flush=True)
+                    print("Success: fetched ECI JSON with curl_cffi", flush=True)
                     return response.json()
 
                 preview = response.text[:240].replace("\n", " ")
@@ -61,23 +64,15 @@ def fetch_with_requests(max_attempts=5):
 
                 if response.status_code not in RETRY_STATUS_CODES:
                     break
-            except (requests.Timeout, requests.ConnectionError) as exc:
+            except Exception as exc:
                 last_error = exc
-                log(f"Retryable request error: {exc}")
-            except requests.RequestException as exc:
-                last_error = exc
-                log(f"Request failed: {exc}")
-                break
-            except json.JSONDecodeError as exc:
-                last_error = exc
-                log(f"Response was not valid JSON: {exc}")
-                break
+                log(f"curl_cffi request failed: {exc}")
 
             if attempt < max_attempts:
                 log("Waiting 2s before retry")
                 time.sleep(2)
 
-    raise RuntimeError(f"Failed to fetch ECI JSON after retries: {last_error}")
+    raise RuntimeError(f"Failed to fetch ECI JSON with curl_cffi after retries: {last_error}")
 
 
 def fetch_with_playwright():
@@ -96,9 +91,9 @@ def fetch_with_playwright():
 
         try:
             context = browser.new_context(
-                user_agent=headers["User-Agent"],
+                user_agent=USER_AGENT,
                 extra_http_headers={
-                    "Accept-Language": headers["Accept-Language"],
+                    "Accept-Language": headers["accept-language"],
                     "Cache-Control": "no-cache",
                     "Pragma": "no-cache",
                 },
@@ -214,10 +209,10 @@ def save_payload(payload):
 def main():
     try:
         try:
-            raw_data = fetch_with_requests()
-            print("Data source method: requests", flush=True)
-        except Exception as requests_exc:
-            log(f"Requests fetch failed; trying Playwright fallback: {requests_exc}")
+            raw_data = fetch_with_curl_cffi()
+            print("Data source method: curl_cffi", flush=True)
+        except Exception as curl_cffi_exc:
+            log(f"curl_cffi fetch failed; trying Playwright fallback: {curl_cffi_exc}")
             raw_data = fetch_with_playwright()
             print("Data source method: Playwright", flush=True)
 
