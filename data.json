@@ -1,7 +1,7 @@
 {
   "source": "https://results.eci.gov.in/ResultAcGenMay2026/election-json-S22-live.json",
   "state_code": "S22",
-  "updated_utc": "2026-05-04T07:21:08.372406+00:00",
+  "updated_utc": "2026-05-04T07:22:25.178852+00:00",
   "data": {
     "S22": {
       "chartData": [
@@ -755,11 +755,11 @@
           "#A08547"
         ],
         [
-          "BJP",
+          "TVK",
           "S22",
           108,
-          "BHOJARAJAN.M",
-          "#ff944d"
+          "IBRAHIM.R",
+          "#e72bd9"
         ],
         [
           "DMK",
@@ -874,11 +874,11 @@
           "#A08547"
         ],
         [
-          "DMK",
+          "ADMK",
           "S22",
           125,
-          "JAYAKUMAR M.",
-          "#05F86E"
+          "RADHAKRISHNAN K.",
+          "#A08547"
         ],
         [
           "DMK",
@@ -2181,7 +2181,7 @@
           107
         ],
         [
-          "BJP",
+          "TVK",
           "S22",
           108
         ],
@@ -2266,7 +2266,7 @@
           124
         ],
         [
-          "DMK",
+          "ADMK",
           "S22",
           125
         ],
